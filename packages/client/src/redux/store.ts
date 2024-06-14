@@ -12,7 +12,7 @@ export const store = createStore(
 
 console.log('\nstore.ts | store.getState() ->',store.getState());
 
-// manually test redux store (vid 198)
+// manually test redux store 
 // store.dispatch({
 // 	type: ActionType.INSERT_CELL_AFTER,
 // 	payload: {

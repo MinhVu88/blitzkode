@@ -14,7 +14,6 @@ const Cells: React.FC = () => {
 		});
 	});
 
-	// why CellCreation is below Cell? -> vids: 219, 220, 221 & 222
 	const renderedCells = orderedCells.map(cell => 
 		<React.Fragment key={cell.id}>
 			<Cell cell={cell} />
@@ -26,7 +25,6 @@ const Cells: React.FC = () => {
 		fetchApiCells();
 	}, [fetchApiCells]);
 
-	// why renderedCells is below CellCreation? -> vids: 219, 220, 221 & 222
 	return (
 		<div className="cells">
 			<CellCreation 

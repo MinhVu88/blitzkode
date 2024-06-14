@@ -32,10 +32,6 @@ export const serveCommand = new Command()
         * currentDir -> ${currentDir}`
       );
 
-      /*
-        - if the app's in prod env & productionMode is true, that value will be switched
-          to false, so that devMode in api/src/index.ts is false
-      */
       await serve(
         parseInt(options.port), 
         currentFile, 

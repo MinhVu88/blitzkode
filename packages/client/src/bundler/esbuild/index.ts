@@ -4,7 +4,6 @@ import { unpkgPaths, unpkgFiles } from "../unpkg/index";
 let esbuildService: esbuild.Service;
 
 export const startService = async (userInput: string) => {
-	// if esbuild service hasn't started yet, start it
 	if (!esbuildService) {
 		esbuildService = await esbuild.startService({
 			worker: true,
@@ -13,7 +12,6 @@ export const startService = async (userInput: string) => {
 	}
 
 	try {
-		// otherwise, start the bundling process & return the transpired, bundled code
 		const result = await esbuildService.build({
 			entryPoints: ["index.js"],
 			bundle: true,

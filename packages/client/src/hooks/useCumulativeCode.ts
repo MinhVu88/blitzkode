@@ -6,7 +6,6 @@ export const useCumulativeCode = (id: string) => {
 
 		const orderedCells = ids.map(id => data[id]);
 
-		// why "var show"? -> vid 250
 		const showFunc = `
 		import _React from 'react';
 		import _ReactDOM from 'react-dom';

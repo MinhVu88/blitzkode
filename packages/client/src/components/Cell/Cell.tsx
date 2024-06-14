@@ -20,7 +20,6 @@ const Cell: React.FC<CellProps> = ({ cell }) => {
 			<Code cell={cell} />
 		</>;
 	} else {
-		// why is ActionBar below the text cell? -> vid 209
 		cellType = <>
 			<Text cell={cell} />
 			<ActionBar id={cell.id} />

@@ -39,7 +39,6 @@ export const Text: React.FC<TextCellProps> = ({ cell }): JSX.Element => {
 		};
 	}, []);
 
-	// TextCell's editor mode
 	if (editMode) {
 		return (
 			<div className="text-editor" ref={editModeRef}>
@@ -48,7 +47,6 @@ export const Text: React.FC<TextCellProps> = ({ cell }): JSX.Element => {
 		);
 	}
 
-	// TextCell's preview mode
 	return (
 		<div className="text-editor card" onClick={() => setEditMode(true)}>
 			<div className="card-content">

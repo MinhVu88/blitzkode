@@ -66,7 +66,6 @@ export const Resizable: React.FC<ResizableProps> = ({ direction, children }) => 
 
     window.addEventListener('resize', callback);
 
-    // clean up the event listener
     return () => {
       window.removeEventListener('resize', callback);
     };

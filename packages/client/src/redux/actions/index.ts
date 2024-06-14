@@ -1,7 +1,6 @@
 import { ActionType } from "../actionTypesEnum";
 import { Cell, CellTypes, CellDirections } from "../cell";
 
-// UI CELLS
 export interface InsertCellAfterAction {
 	type: ActionType.INSERT_CELL_AFTER;
 	payload: { id: string | null; type: CellTypes };
@@ -22,7 +21,6 @@ export interface MoveCellAction {
 	payload: { id: string; direction: CellDirections };
 }
 
-// API CELLS
 export interface FetchApiCellsAction {
 	type: ActionType.FETCH_API_CELLS;
 	payload: undefined;
@@ -43,8 +41,6 @@ export interface PersistCellsErrorAction {
 	payload: string;
 }
 
-// BUNDLING PROCESS
-// specify payload for the bundling actions -> vid 225
 export interface StartBundlingAction {
 	type: ActionType.START_BUNDLING;
 	payload: string;

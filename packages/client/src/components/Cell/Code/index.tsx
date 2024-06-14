@@ -17,13 +17,11 @@ export const Code: React.FC<CodeCellProps> = ({ cell }): JSX.Element => {
 
 	const bundledOutput = useTypedSelector(state => state.bundledOutput[cell.id]);
 
-	// vids 239, 240 & 241
 	const cumulativeBundledOutput = useCumulativeCode(cell.id);
 
 	console.log('Cell | Code | index.tsx | cumulativeBundledOutput ->',cumulativeBundledOutput);
 
 	useEffect(() => {
-		// vids 232 & 233
 		if(!bundledOutput) {
 			// bundle(cell.id, cell.content);
 

@@ -12,7 +12,6 @@ import {
 } from "../actions";
 import { RootState } from '..';
 
-// synchronous actions
 export const insertCellAfter = (
 	id: string | null, 
 	cellType: CellTypes
@@ -50,10 +49,8 @@ export const moveCell = (
 	};
 };
 
-// asynchronous action
 export const fetchApiCells = () => {
 	return async (dispatch: Dispatch<Action>) => {
-		// to make isLoading true
 		dispatch({ 
 			type: ActionType.FETCH_API_CELLS, 
 			payload: undefined 
@@ -77,7 +74,6 @@ export const fetchApiCells = () => {
 	};
 };
 
-// vid 295
 export const persistCells = () => {
 	return async (
 		dispatch: Dispatch<Action>,

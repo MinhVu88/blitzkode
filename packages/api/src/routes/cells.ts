@@ -13,13 +13,6 @@ export const setCellsRouter = (fileName: string, dir: string) => {
 
   const fullFilePath = path.join(dir, fileName);
 
-  /* get a list of cells from a file & render it in the browser
-    - Check if the file exists by 1st trying reading it 
-    - If reading it throws an error, it probably hasn't been created
-    - It'll then be created along with default cells in it for user
-    - Read the file & parse the cells out of it
-    - Render the cells onto browser
-  */
   router.get('/cells', async(req, res) => {
     try {
       const cells = await fs.readFile(fullFilePath, {encoding: 'utf-8'});
@@ -36,10 +29,6 @@ export const setCellsRouter = (fileName: string, dir: string) => {
     }
   });
 
-  /* write an updated list of cells to a file
-    - Get a list of cells from the request object
-    - Turn it into a format that can be safely written to the file
-  */
   router.post('/cells', async(req, res) => {
     const { cells }: { cells: Cell[] } = req.body;
 

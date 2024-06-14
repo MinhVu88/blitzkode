@@ -1,4 +1,3 @@
-// vid 200
 import { useSelector, TypedUseSelectorHook } from "react-redux";
 import { RootState } from "../redux";
 

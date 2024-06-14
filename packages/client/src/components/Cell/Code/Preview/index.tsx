@@ -55,7 +55,6 @@ export const Preview: React.FC<CodePreviewProps> = ({ bundledCode, status }) => 
 	const iframeRef = useRef<any>();
 
 	useEffect(() => {
-		// reset iframe's contents back to its original srcdoc whenever the bundled code's updated
 		iframeRef.current.srcdoc = iframeOriginalContents;
 
 		setTimeout(() => {

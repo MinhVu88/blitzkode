@@ -2,7 +2,6 @@ import produce from "immer";
 import { ActionType } from "../actionTypesEnum";
 import { Action } from "../actions";
 
-// why is BundlesState might be undefined sometimes? -> vids 229 & 230
 interface BundlesState {
   [id: string]: {
     isBundling: boolean;
@@ -26,7 +25,6 @@ const bundlesReducer = produce(
 
         const currentBundledOutput = id;
 
-        // vid 227
         state[currentBundledOutput] = {
           isBundling: true,
           code: "",
@@ -42,7 +40,6 @@ const bundlesReducer = produce(
         
         const currentBundledOutput = id;
 
-        // vid 227
         state[currentBundledOutput] = {
           isBundling: false,
           code,

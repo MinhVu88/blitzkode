@@ -15,7 +15,6 @@ interface CodeEditorProps {
 export const Editor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
 	const monacoEditorRef = useRef<any>();
 
-	// this function's called when the code editor's 1st displayed on the screen
 	const handleEditorDidMount: EditorDidMount = (getCurrentUserInput, monacoEditor) => {
 		monacoEditorRef.current = monacoEditor;
 
@@ -51,10 +50,8 @@ export const Editor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) =>
 			monacoEditorRef.current
 		);
 
-		// get the current, unformatted user-provided code
 		const unformattedUserInput = monacoEditorRef.current.getModel().getValue();
 
-		// use prettier to format user's unformatted code
 		const formattedUserInput = prettier
 			.format(unformattedUserInput, {
 				parser: "babel",
@@ -65,7 +62,6 @@ export const Editor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) =>
 			})
 			.replace(/\n$/, "");
 
-		// set the formatted user-provided code back in the editor
 		monacoEditorRef.current.setValue(formattedUserInput);
 	};
 

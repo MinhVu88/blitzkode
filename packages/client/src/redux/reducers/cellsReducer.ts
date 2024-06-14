@@ -19,7 +19,6 @@ const initialState: CellsState = {
 	data: {}
 };
 
-// vid 196
 const getRandomId = () => Math.random().toString(36).substr(2, 5);
 
 const cellsReducer = produce(
@@ -43,7 +42,7 @@ const cellsReducer = produce(
 
 				const currentCellIndex = state.ids.findIndex(cell_id => cell_id === id);
 
-				// vid 220 - refactoring the redux side
+				// refactoring the redux side
 				// state.ids.push() -> state.ids.unshift()
 				// state.ids.splice(currentCellIndex, ..., ...) -> splice(currentCellIndex + 1, ..., ...)
 				if (currentCellIndex < 0) {
@@ -57,7 +56,6 @@ const cellsReducer = produce(
 			case ActionType.UPDATE_CELL: {
 				const { id, content } = action.payload;
 
-				// vid 192
 				// return {
 				// 	...state,
 				// 	data: {
@@ -85,7 +83,6 @@ const cellsReducer = produce(
 			case ActionType.MOVE_CELL: {
 				const { id, direction } = action.payload;
 
-				// vid 195
 				const currentCellIndex = state.ids.findIndex(cell_id => cell_id === id);
 
 				const newCellIndex = direction === "up" ? currentCellIndex - 1 : currentCellIndex + 1;
@@ -136,7 +133,6 @@ const cellsReducer = produce(
 				return state;
 		}
 	},
-	// vid 201
 	initialState
 );
 
