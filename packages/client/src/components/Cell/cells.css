@@ -1,0 +1,7 @@
+.cells {
+  margin: 0 20px 20vh;
+}
+
+.react-draggable-transparent-selection .cells {
+  margin-bottom: 100vh;
+}

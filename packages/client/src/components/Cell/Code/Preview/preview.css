@@ -1,0 +1,19 @@
+.preview-wrapper {
+	position: relative;
+	flex-grow: 1;
+	height: 100%;
+}
+
+.preview-wrapper iframe {
+	background-color: azure;
+	pointer-events: none;
+	height: 100%;
+	width: 100%;
+}
+
+.preview-error {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: crimson;
+}
